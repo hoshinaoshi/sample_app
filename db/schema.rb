@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_03_21_163847) do
     t.integer "have_child"
     t.string "main_image"
     t.text "self_introduction"
+    t.string "exponent_push_token"
+    t.string "os"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

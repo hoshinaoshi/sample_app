@@ -15,5 +15,7 @@ class AddBasicInfoToUser < ActiveRecord::Migration[6.0]
     add_column :users, :have_child, :integer
     add_column :users, :main_image, :string
     add_column :users, :self_introduction, :text
+    add_column :users, :exponent_push_token, :string
+    add_column :users, :os, :string
   end
 end

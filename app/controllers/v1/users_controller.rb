@@ -19,7 +19,11 @@ module V1
     private
 
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :birthday, :sex, :nickname, :residence, :purpose,
+                                   :annual_income, :occupation, :height, :academic_history, :first_dating_spend_cost,
+                                   :period_until_dating, :marriage_history, :have_child, :self_introduction,
+                                   :exponent_push_token, :os
+                                  )
     end
   end
 end
