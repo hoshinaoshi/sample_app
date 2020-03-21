@@ -4,15 +4,12 @@ module V1
 
     # POST /v1/login
     def create
-      @user = User.find_for_database_authentication(email: params[:email])
-      return invalid_email unless @user
+      @user = User.find_for_database_authentication(email: params[:session][:email])
+      return invalid_email if @user.blank?
+      return invalid_password unless  @user.valid_password?(params[:session][:password])
 
-      if @user.valid_password?(params[:password])
-        sign_in :user, @user
-        render json: @user, serializer: SessionSerializer, root: nil
-      else
-        invalid_password
-      end
+      sign_in :user, @user
+      render json: @user, serializer: SessionSerializer, root: nil
     end
 
     private
