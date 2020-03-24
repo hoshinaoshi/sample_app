@@ -1,5 +1,5 @@
 default: &default
-  s3_bucket: sample-uploads
+  s3_bucket: "https://sample-uploads.s3-us-west-2.amazonaws.com"
 
 development:
   <<: *default
